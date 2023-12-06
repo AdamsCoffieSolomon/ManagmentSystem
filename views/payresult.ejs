@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Made</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            align-items: center;
+        }
+        
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        .navbar h3 {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            margin: 0;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            
+        }
+        
+        .card {
+            background-color: #fff;
+            border: 1px solid rgb(146, 179, 80);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            background-color: rgb(169, 163, 169);
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 16px;
+        }
+        
+        .card-body p {
+            margin: 8px 0;
+        }
+        
+        .card-footer {
+            background-color: greenyellow;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .goback-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .goback-button:hover {
+            background-color: #45a049;
+        }
+        
+        .goback-button {
+            color: antiquewhite;
+            margin-left: 20px;
+        }
+        
+        #searchInput {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h3><i class="fa-solid fa-money-check-dollar"></i> PAYMENT MADE</h3>
+        <a href="/home"><i class="fa-solid fa-home"></i> Go Home <i class="fa-solid fa-arrow-rotate-left"></i></a>
+        <a href="/makePayment" class="goback-button"><i class="fa-solid fa-money-check-dollar"></i> Make Payment</a>
+
+        <!-- Input for searching student names -->
+        <label for="searchInput">Search Student:</label>
+        <input type="text" id="searchInput" list="studentNames" oninput="filterStudents()">
+        <datalist id="studentNames">
+        <!-- Options will be dynamically added here -->
+    </datalist>
+    </div>
+
+
+    <% if (payment.length > 0) { %>
+        <div class="container">
+            <% payment.forEach((formData) => { %>
+                <div class="card">
+                    <div class="card-header">
+                        Student Payment
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Student Name:</strong>
+                            <%= formData.studname %>
+                        </p>
+                        <p><strong>Money:</strong>
+                            <%= formData.money %>
+                        </p>
+                        <p><strong>Balance:</strong>
+                            <%= formData.balance %>
+                        </p>
+                        <p><strong>Date:</strong>
+                            <%= formData.date.toLocaleDateString() %>
+                        </p>
+                        <p><strong>Accountant Name:</strong>
+                            <%= formData.accountantName %>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Thank you for the payment!
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+        <% } else { %>
+            <p style="text-align: center;">No payments available.</p>
+            <% } %>
+
+                <script>
+                    const studentNames = [
+                        <% payment.map(formData => formData.studname).forEach(name => { %>
+                        '<%= name %>',
+                        <% }); %>
+                    ];
+
+                    function filterStudents() {
+                        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                        const filteredStudentNames = studentNames.filter(name => name.toLowerCase().includes(searchInput));
+
+                        updateDatalist(filteredStudentNames);
+                    }
+
+                    function updateDatalist(filteredStudentNames) {
+                        const datalist = document.getElementById('studentNames');
+                        datalist.innerHTML = '';
+
+                        filteredStudentNames.forEach(name => {
+                            const option = document.createElement('option');
+                            option.value = name;
+                            datalist.appendChild(option);
+                        });
+                    }
+                </script>
+
+</body>
+
+</html>

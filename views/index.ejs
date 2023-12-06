@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fees Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="shortcut icon" href="./images/sales2-removebg-preview.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style='font-size: 50px;' onclick="showOverlay()">
+                &#8281;
+            </a>
+
+            <div id="overlay">
+                <div id="content">
+                    <img src="./images/th-removebg-preview (1).png" alt="" width="90px " alt="Image">
+                    <p>Make Sales Everyday</p>
+                    <hr>
+                    <a href="#" target="_blank">Explore more</a>
+                    <div id="close-btn" onclick="closeOverlay()">X</div>
+                </div>
+            </div>
+            <a class="navbar-brand " href="#">
+                <a class="nav-link" href="#"><img src="./images/th-removebg-preview (1).png" alt="" width="50px"></a>
+            </a>
+            <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+            <div class=" navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b> Todays</b> Work Management</a>
+
+                    </li>
+                    <li class="nav-item marginme">
+                        <a href="/addstudent"> <button type="button" class="btn btn-outline-secondary">&#10024;
+                    Add Student</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/makePayment"> <button type="button" class="btn btn-outline-secondary ">
+                          <i  class="fa-solid fa-book-open"></i>
+                  Make Payment</button></a>
+                    </li>
+                </ul>
+
+                <span class="navbar-text ">
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notification"  class="far fa-bell ">
+                </a>
+               
+                    <span class="navbar-text">
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fees Book" class="fa-solid fa-book-open">
+                        </a>
+                        <span class="navbar-text">
+                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notification" class="fa-solid fa-school">
+                            </a>
+                            <span class="navbar-text">
+                                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notification" class="fa-solid fa-jedi">
+                                </a>
+                                <span class="navbar-text" style="font-size: x-large;">
+                                    |
+                                    </a>
+                                <span class="navbar-text">
+                                    <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="pesornal information"  class="fa-solid fa-user-astronaut">
+                                    </a>
+                                    <span class="navbar-text">
+                                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search Student's" class="fa-solid fa-magnifying-glass custom-tooltip"></a>
+                                    </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="allflex">
+        <div class="innerOne">
+            <p> <a href=""><i class="fa-solid fa-house"></i>
+                <b>Home</b></a></p>
+            <hr>
+            <p> <a href=""><i class="fa-solid fa-handshake"></i> <b>Fees Paymaent Plan</b></a>
+            </p>
+
+        </div>
+        <hr>
+        <div class="innertwo">
+            <div class="inner2inners">
+                <div class="myinnerflex1">
+                    <a href="">
+                        <h3>Today's Work Records <i class="fa-solid fa-book-medical"></i></h3>
+                    </a>
+                </div>
+                <div class="myinnerflex2">
+                    <a href="">
+                        <h3>Teacher Payment Book <i class="fa-solid fa-book-medical"></i></h3>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="inner2inners">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Our Service
+                </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" type="button">create new service</button></li>
+                        <li><button class="dropdown-item" type="button">Last service</button></li>
+                        <li><button class="dropdown-item" type="button"></button>A Month Ago</li>
+                    </ul>
+                </div>
+                <h5>Make sure to prrovide gentle service to all Parent <button>see more</button></h5>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service Offered</th>
+                            <th>Bursrer</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Months</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <div action="/paymentmade" method="get">
+                                <td><input type="checkbox" onclick="rsubmit();"> Service 1</td>
+                            </div>
+
+                            <td>2023-11-28</td>
+                            <td>12:00 PM</td>
+                            <td>November</td>
+                        </tr>
+                        <tr>
+                            <div action="/paymentmade" method="get">
+                                <td><input type="checkbox" onclick="rsubmit();"> Service 1</td>
+                            </div>
+
+                            <td>2023-11-28</td>
+                            <td>12:00 PM</td>
+                            <td>November</td>
+                        </tr>
+                        <tr>
+                            <div action="/paymentmade" method="get">
+                                <td><input type="checkbox" onclick="rsubmit();"> Service 1</td>
+                            </div>
+
+                            <td>2023-11-28</td>
+                            <td>12:00 PM</td>
+                            <td>November</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

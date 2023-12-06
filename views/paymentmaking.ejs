@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="paymentmaking.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <h3><i class="fa-solid fa-money-check-dollar"></i> PAYMENT MAKING</h3>
+
+        <a href="/home" class="home"><i class="fa-solid fa-home"></i>  Go Home <i class="fa-solid fa-arrow-rotate-left"></i></a>
+        <a href="/paymentmade"><i class="fa-solid fa-money-bill-wave"></i> View Students Payments  <i class="fa-solid fa-angle-right"></i></a>
+    </div>
+
+
+    <form action="/makePayment" method="post">
+
+        <label for="studname">Student's Name:</label>
+        <input type="text" name="studname" id="studname"><br><br>
+        <label for="class">Class:</label>
+        <input type="text" name="className" id="className" required>
+
+        <label for="money">Amount Of Money:</label>
+        <input type="number" name="money" id="money" required>
+
+        <label for="balance">Balance:</label>
+        <input type="number" name="balance" id="balance" required>
+
+        <label for="date">Date Of Payment:</label>
+        <input type="date" name="date" id="date" required><br><br>
+
+        <label for="accountantName">Accountant's Name:</label>
+        <input type="text" name="accountantName" id="accountantName"><br><br>
+
+        <input type="submit" name="submit">
+    </form>
+    </div>
+    </form>
+
+</body>
+
+</html>
