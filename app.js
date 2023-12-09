@@ -21,10 +21,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+
+
+const users = [
+    { username: 'joy4561', password: 'Joy' },
+    { username: 'nuru5678', password: 'Nurudeen' }
+];
+
+app.get('/', (req, res) => {
     res.render('loginfo');
 });
 
+app.post('/login', (req, res) => {
+    const { userName, password } = req.body;
+})
 router.get('/addstudent', (req, res) => {
     res.render('addStudents');
 });
@@ -32,6 +42,11 @@ router.get('/addstudent', (req, res) => {
 router.get('/home', (req, res) => {
     res.render('index');
 });
+
+router.route('/paylog')
+    .get((req, res) => {
+        res.render('paymentLogin');
+    })
 
 router.route('/makePayment')
     .get((req, res) => {

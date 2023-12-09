@@ -1,57 +1,103 @@
 body {
-    background-color: #10072c;
-    background-image: linear-gradient(62deg, #e8fc05 0%, #6402c7 100%);
-}
-
-.login {
-    margin: auto auto auto;
-}
-
-fieldset {
-    margin: auto auto;
-    border: 1px solid rgb(62, 61, 61);
-    padding: 3%;
-    border-radius: 3%;
-    border-radius: 42px;
-    background: linear-gradient(145deg, #dc8df9, #4a03e2);
-    box-shadow: 22px 22px 24px #9d9d9d, -22px -22px 24px #ffffff;
-}
-
-p a {
-    color: black;
-}
-
-button {
-    padding: 17px 40px;
-    border-radius: 50px;
-    border: 0;
-    background-color: rgb(132, 252, 11);
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-size: 15px;
-    transition: all .5s ease;
-}
-
-button:hover {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
-}
-
-button:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: white;
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transition: 100ms;
-}
-
-.grid {
-    padding-top: 3%;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
     display: flex;
-    text-align: center;
+    align-items: center;
     justify-content: center;
-    gap: 2%;
+    height: 100vh;
+    background-color: rgb(251, 218, 251);
+    background-image: url(./imagesss/WhatsApp_Image_2023-03-24_at_14.04.15-removebg-preview.png);
+}
+
+.container {
+    background-color: rgb(207, 157, 207);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 15px 18px 15px rgb(244, 113, 244);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #3366cc;
+}
+
+.account-type {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.account-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.account-image {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid yellow
+}
+
+.tick-button {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3366cc;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.account-type input {
+    display: none;
+}
+
+.account-type input:checked+.account-label .tick-button {
+    background-color: #3366cc;
+}
+
+.account-type input:checked+.account-label {
+    color: #3366cc;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 10px;
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.login-button {
+    background-color: #3366cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #0052cc;
+    /* Darker Blue for Hover State */
 }
