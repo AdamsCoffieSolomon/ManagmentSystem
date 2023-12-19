@@ -27,9 +27,19 @@ const paymentSchema = new mongoose.Schema({
         required: true,
         default: undefined
     },
+    time: {
+        type: String,
+        required: true,
+        default: undefined
+    },
     accountantName: {
         type: String,
         required: true,
+        default: undefined
+    },
+    number: {
+        type: Number,
+        required: false,
         default: undefined
     }
 });

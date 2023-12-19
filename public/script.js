@@ -16,4 +16,8 @@
 
         function rsubmit() {
             window.location = "./paymentmade";
+        };
+
+        function smssubmit() {
+            window.location = "./sending-sms";
         }

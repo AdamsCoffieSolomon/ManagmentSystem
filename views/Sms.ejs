@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Sender</title>
+    <link rel="stylesheet" href="sms.css">
+</head>
+
+<body>
+    <form action="/send-sms" method="post">
+        <h1>SMS Sender</h1>
+
+        <label for="from">Sent from:</label>
+        <input type="text" id="from" name="from" required>
+        <br>
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to" required>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <button type="submit">Send SMS</button>
+    </form>
+</body>
+
+</html>

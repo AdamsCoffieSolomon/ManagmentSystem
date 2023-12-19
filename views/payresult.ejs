@@ -46,7 +46,6 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            
         }
         
         .card {
@@ -59,7 +58,8 @@
         }
         
         .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 14px 25px rgb(167, 249, 3);
+            background-color: rgb(240, 218, 189);
         }
         
         .card-header {
@@ -149,8 +149,16 @@
                         <p><strong>Date:</strong>
                             <%= formData.date.toLocaleDateString() %>
                         </p>
-                        <p><strong>Accountant Name:</strong>
+                        <p><strong>Time:</strong>
+                            <%= formData.time instanceof Date ? formData.time.toLocaleTimeString() : 'N/A' %>
+                        </p>
+
+
+                        <p><strong>Payed To:</strong>
                             <%= formData.accountantName %>
+                        </p>
+                        <p><strong>ParentNo.:</strong>
+                            <%= formData.number %>
                         </p>
                     </div>
                     <div class="card-footer">
